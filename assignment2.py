@@ -26,7 +26,7 @@ class Assignment2:
         else:
             return False
         
-    def connectTCP(host, port):
+    def connectTcp(host, port):
         import socket
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
