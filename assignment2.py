@@ -13,12 +13,18 @@ class Assignment2:
         return anniversaries
     
     def modifyYear(self, n):
-        year_str = str(self.year)
-        first_two_digits = year_str[:2]
-        first_two_digits_repeated = first_two_digits * n
-        odd_digits = "".join([year_str[i] for i in range(1, len(year_str), 2)])
-        odd_digits_repeated = int(odd_digits) * n
-        return first_two_digits_repeated + str(odd_digits_repeated)
+        val = ""
+        y = ""
+        year = str(self.year)
+        index1 = year[0]
+        index2 = year[1]
+        for i in range(n):
+            val += index1 + index2
+        x = str(self.year * n)
+        for i in range(0, len(x)):
+            if(i % 2 == 0):
+                y += x[i]
+        return val + y
 
     def checkGoodString(string):
         if len(string) >= 9 and string[0].islower() and sum(i.isdigit() for i in string) == 1:
@@ -40,13 +46,13 @@ class Assignment2:
 #     a = Assignment2(1782)
 #     ret = a.modifyYear(3)
 #     print(ret)
-    
+#    
 #     ret = Assignment2.checkGoodString("f1obar0more")
 #     print(ret)
-
+# 
 #     ret = Assignment2.checkGoodString("foobar0more")
 #     print(ret)
-    
+# 
 #     retval = Assignment2.connectTCP("www.google.com", 80)
 #     if retval:
 #         print("Connection established correctly")
